@@ -71,7 +71,6 @@ def print_arb(list):
         #print "${0:.2f} at {1:.3%}".format(list[i][0] + sum, (sum*perc + list[i][0]*list[i][1])/(list[i][0]+sum))
         perc = (sum*perc + list[i][0]*list[i][1])/(list[i][0]+sum)
         sum += list[i][0]
-        #print perc
 parser = argparse.ArgumentParser()
 parser.add_argument("-eth", action="store_true")
 parser.add_argument("-ltc",action="store_true")
@@ -81,8 +80,6 @@ args = parser.parse_args()
 if(args.eth or args.ltc or args.btc or args.bch):
     if(args.eth):
         eth_list = findarb("ETH")
-        print(eth_list)
-        print_arb(eth_list)
     if(args.ltc):
         ltc_list = findarb("LTC")
     if(args.btc):
